@@ -22,13 +22,10 @@ public class TimeSlotBookingManager {
 
 	@Autowired
 	UserBookingRepository userBookingRepository;
-
 	@Autowired
 	SlotsRepository slotsRepository;
-
 	@Autowired
 	BookingDetailsRepository bookingDetailsRepository;
-
 
 	public void defineSlots(DefineSlotRequest slotRequest) {
 		
@@ -38,7 +35,6 @@ public class TimeSlotBookingManager {
 		List<Slots> slotsList = null;
 		List<Long> slotIds = new ArrayList<>();
 		
-		
 
 		for(int i=0;i<slots.length;i++) {
 			Date startTime = slots[i].startTime;
@@ -47,10 +43,8 @@ public class TimeSlotBookingManager {
 
 			if(!slotsList.isEmpty()){
 				slotIds.add(slotsList.get(0).getSlotId());
-
 			}
 			else{
-
 				Slots s = new Slots();
 				s.setStartTime(startTime);
 				s.setEndTime(endTime);
@@ -61,11 +55,16 @@ public class TimeSlotBookingManager {
 		
 		for(long s : slotIds){
 			//add in UserBooking table with userId,s slots,isBooked false
-			UserBooking obj = new UserBooking();
-			obj.setBooked(false);
-			obj.setSlotId(s);
-			obj.setUserId(userId);
-			userBookingRepository.save(obj);
+			List<UserBooking> userBookingList;
+			userBookingList = userBookingRepository.findByUserIdAndSlotId(userId,s);
+
+			if(userBookingList.isEmpty()){
+				UserBooking obj = new UserBooking();
+				obj.setBooked(false);
+				obj.setSlotId(s);
+				obj.setUserId(userId);
+				userBookingRepository.save(obj);
+			}
 		}
 	}
 	
