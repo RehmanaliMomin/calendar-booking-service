@@ -31,4 +31,3 @@ Postman Collection link - https://www.postman.com/collections/e20f427702ff81553a
 Use this link to import in your postman.
 
 Published version - https://documenter.getpostman.com/view/5476575/SzYdUcMh?version=latest
-Postman Link :
