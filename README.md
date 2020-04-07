@@ -20,3 +20,15 @@ APIs:
 
 Creator will be authenticated while he is defining the slots.
 There's no authentication for getting those available slots and booking them.
+
+Further things that can be done :
+1. Test cases.
+2. Integration with Google Calendar.
+3. More checks and different response for different cases instead of generic one.
+4. Error and Exception handling.
+
+Postman Collection link - https://www.postman.com/collections/e20f427702ff81553ace
+Use this link to import in your postman.
+
+Published version - https://documenter.getpostman.com/view/5476575/SzYdUcMh?version=latest
+Postman Link :
