@@ -10,7 +10,6 @@ Assumptions :
 2. User can book 1 slot at a time form the creator/definer.
 3. We will ask user for email id and phone details, in order to book the creator's slot.
 
-
 APIs:
 1. Signup
 2. Login
@@ -26,6 +25,11 @@ Further things that can be done :
 2. Integration with Google Calendar.
 3. More checks and different response for different cases instead of generic one.
 4. Error and Exception handling.
+
+
+Language Used : 
+Java with SpringBoot framework, hibernate as ORM, and Postgres for DB.
+Service and DB are deployed on heroku.
 
 Postman Collection link - https://www.postman.com/collections/e20f427702ff81553ace
 Use this link to import in your postman.
