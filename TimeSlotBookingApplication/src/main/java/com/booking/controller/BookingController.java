@@ -32,8 +32,7 @@ public class BookingController {
 		return new ResponseEntity<Response>(response, HttpStatus.OK);
 	}
 
-	@GetMapping(value = "/api/getSlotsOfUser/{userId}", headers = "Accept=application/json")
-	@PreAuthorize("hasRole('USER')")
+	@GetMapping(value = "/api/auth/getSlotsOfUser/{userId}", headers = "Accept=application/json")
 	public ResponseEntity<Response> getSlotsOfUser(@PathVariable Long userId) {
 		System.out.println("get slots");
 		Response response = new Response();
@@ -43,8 +42,7 @@ public class BookingController {
 		return new ResponseEntity<Response>(response, HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/api/bookSlot", headers = "Accept=application/json")
-	@PreAuthorize("hasRole('USER')")
+	@PostMapping(value = "/api/auth/bookSlot", headers = "Accept=application/json")
 	public ResponseEntity<Response> bookSlot(@RequestBody BookSlotRequest request) {
 		System.out.println("book slot");
 		Response response = new Response();
