@@ -32,9 +32,8 @@ public class TimeSlotBookingManager {
 		long userId = slotRequest.getUserId();
 		Slot[] slots = slotRequest.getSlots();
 		
-		List<Slots> slotsList = null;
+		List<Slots> slotsList;
 		List<Long> slotIds = new ArrayList<>();
-		
 
 		for(int i=0;i<slots.length;i++) {
 			Date startTime = slots[i].startTime;
@@ -87,7 +86,9 @@ public class TimeSlotBookingManager {
 		return response;
 	}
 
+	
 	public void bookSlots(BookSlotRequest request) {
+		
 		long userId = request.getUserId();
 		long slotId = request.getSlotId();
 		
@@ -107,10 +108,6 @@ public class TimeSlotBookingManager {
 		bookingDetails.setCandidatePhone(candidatePhone);
 
 		bookingDetailsRepository.save(bookingDetails);
-
-
-
-		
 	}
 	
 	

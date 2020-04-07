@@ -25,7 +25,6 @@ public class BookingController {
 	@PostMapping(value = "/api/defineSlots", headers = "Accept=application/json")
 	@PreAuthorize("hasRole('USER')")
 	public ResponseEntity<Response> defineSlots(@RequestBody DefineSlotRequest request) {
-		System.out.println("define slots");
 		Response response = new Response();
 		timeSlotBooingManager.defineSlots(request);
 		response.setStatus(true);
@@ -34,7 +33,6 @@ public class BookingController {
 
 	@GetMapping(value = "/api/auth/getSlotsOfUser/{userId}", headers = "Accept=application/json")
 	public ResponseEntity<Response> getSlotsOfUser(@PathVariable Long userId) {
-		System.out.println("get slots");
 		Response response = new Response();
 		GetSlotsResponse responseObj = timeSlotBooingManager.getSlotsOfUser(userId);
 		response.setStatus(true);
@@ -44,7 +42,6 @@ public class BookingController {
 
 	@PostMapping(value = "/api/auth/bookSlot", headers = "Accept=application/json")
 	public ResponseEntity<Response> bookSlot(@RequestBody BookSlotRequest request) {
-		System.out.println("book slot");
 		Response response = new Response();
 		timeSlotBooingManager.bookSlots(request);
 		response.setStatus(true);
